@@ -12,7 +12,7 @@ export default StyleSheet.create({
     borderRadius: 8,
   },
   storeDetails: {
-    width: '65%',
+    width: '80%',
     gap: 5,
   },
   storeTitle: {

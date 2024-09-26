@@ -3,25 +3,24 @@ import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
   container: {
     borderWidth: 1,
-    borderRadius: 18,
-    marginTop: 20,
+    borderColor: 'green',
+    marginTop: 25,
+    borderRadius: 15,
     flexDirection: 'row',
-    alignItems: 'center',
     justifyContent: 'space-between',
-  },
-  productImage: {
-    width: 111,
-    height: 78,
+    alignItems: 'center',
+    padding: 20,
   },
   detailsContainer: {
-    marginRight: 20,
-    paddingVertical: 10,
+    gap: 5,
+  },
+  priceContainer: {
+    flexDirection: 'row',
   },
   productTitle: {
-    fontSize: 16,
+    fontSize: 14,
     color: 'black',
     fontWeight: 'bold',
-    marginBottom: 5,
   },
   productPrice: {
     color: 'black',
@@ -31,9 +30,6 @@ export default StyleSheet.create({
     color: 'grey',
     textDecorationLine: 'line-through',
     marginLeft: 10,
-  },
-  priceContainer: {
-    flexDirection: 'row',
   },
   offerText: {
     color: '#ffff',
@@ -49,13 +45,14 @@ export default StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#f5f5f5',
     borderRadius: 10,
-    marginTop: 10,
     padding: 5,
+    gap: 15,
     justifyContent: 'space-between',
+    marginBottom: 5,
   },
   qtyButton: {
     backgroundColor: '#ffff',
-    padding: 5,
+    paddingHorizontal: 8,
   },
   buttonText: {
     fontSize: 18,
@@ -64,6 +61,13 @@ export default StyleSheet.create({
   },
   qtyText: {
     color: 'grey',
+    fontSize: 16,
+  },
+  quantityWraper: {
+    alignItems: 'flex-end',
+  },
+  totalText: {
+    color: 'black',
     fontSize: 16,
   },
 });

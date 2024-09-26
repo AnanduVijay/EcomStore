@@ -49,7 +49,7 @@ const ProductListing = ({navigation}) => {
         <ProductCard />
         <ProductCard />
       </ScrollView>
-      <CheckOutBar />
+      <CheckOutBar onPress={() => navigation.navigate('Cart')} />
     </SafeAreaView>
   );
 };

@@ -7,6 +7,9 @@ import ProductList from './components/productList/ProductList';
 import DeliveryType from './components/deliveyType/DeliveryType';
 import DeliveryDay from './components/deliveryDay/DeliveryDay';
 import DeliveryTime from './components/deliveryTime/DeliveryTime';
+import AddressBox from './components/addressBox/AddressBox';
+import PriceCard from './components/priceCard/PriceCard';
+import ProceedCard from './components/proceedCard/ProceedCard';
 
 const CartScreen = ({navigation}) => {
   return (
@@ -29,6 +32,9 @@ const CartScreen = ({navigation}) => {
         <DeliveryType />
         <DeliveryDay />
         <DeliveryTime />
+        <AddressBox />
+        <PriceCard />
+        <ProceedCard />
       </ScrollView>
     </View>
   );

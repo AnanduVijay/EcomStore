@@ -7,7 +7,7 @@ export default StyleSheet.create({
   },
   wraper: {
     padding: 10,
-    paddingBottom: 100,
+    paddingBottom: 15,
   },
   recomentationTitle: {
     color: 'black',

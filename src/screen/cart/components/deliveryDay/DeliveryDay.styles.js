@@ -10,7 +10,7 @@ export default StyleSheet.create({
   },
   timeWraper: {},
   dayButton1: {
-    backgroundColor: 'green',
+    backgroundColor: '#08C25D',
     paddingHorizontal: 70,
     paddingVertical: 15,
     borderRadius: 10,

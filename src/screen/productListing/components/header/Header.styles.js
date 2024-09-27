@@ -29,6 +29,6 @@ export default StyleSheet.create({
     height: 36,
     borderRadius: 40,
     borderWidth: 2,
-    borderColor: 'green',
+    borderColor: '#08C25D',
   },
 });

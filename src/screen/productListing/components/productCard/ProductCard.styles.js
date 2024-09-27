@@ -61,6 +61,7 @@ export default StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: 'green',
+    paddingHorizontal: 10,
   },
   qtyText: {
     color: 'grey',

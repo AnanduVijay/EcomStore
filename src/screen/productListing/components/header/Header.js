@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <View style={styles.container}>
       <TouchableOpacity>
-        <MapPinIcon color={'green'} size={34} />
+        <MapPinIcon color={'#08C25D'} size={34} />
       </TouchableOpacity>
       <View style={styles.addressContainer}>
         <View style={styles.mainTextContainer}>

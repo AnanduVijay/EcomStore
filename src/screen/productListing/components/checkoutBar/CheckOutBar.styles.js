@@ -7,13 +7,13 @@ export default StyleSheet.create({
   notch: {
     width: 20,
     height: 20,
-    backgroundColor: 'green',
+    backgroundColor: '#08C25D',
     transform: [{rotate: '45deg'}],
     marginBottom: -10,
     zIndex: 1,
   },
   container: {
-    backgroundColor: 'green',
+    backgroundColor: '#08C25D',
     alignItems: 'center',
     flexDirection: 'row',
     width: '100%',

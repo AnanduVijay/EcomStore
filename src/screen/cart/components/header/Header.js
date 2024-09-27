@@ -16,7 +16,7 @@ export default Header;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'green',
+    backgroundColor: '#3AC77A',
     flexDirection: 'row',
     padding: 15,
     justifyContent: 'space-between',

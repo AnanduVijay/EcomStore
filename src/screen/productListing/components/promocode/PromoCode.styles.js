@@ -21,7 +21,7 @@ export default StyleSheet.create({
     color: '#000',
   },
   offerImgText: {
-    color: 'green',
+    color: '#08C25D',
     fontWeight: 'bold',
     fontSize: 25,
   },
@@ -30,7 +30,7 @@ export default StyleSheet.create({
     height: 45,
     borderWidth: 2,
     borderRadius: 50,
-    borderColor: 'green',
+    borderColor: '#08C25D',
     alignItems: 'center',
     justifyContent: 'center',
   },

@@ -27,7 +27,7 @@ export default StyleSheet.create({
     fontWeight: '900',
   },
   addButton: {
-    backgroundColor: 'green',
+    backgroundColor: '#08C25D',
     width: 'auto',
     paddingHorizontal: 20,
     borderRadius: 4,

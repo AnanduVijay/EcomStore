@@ -19,7 +19,7 @@ export default StyleSheet.create({
     width: '100%',
     borderRadius: 17,
     justifyContent: 'space-between',
-    padding: 20,
+    padding: 15,
   },
   checkoutbutton: {
     backgroundColor: '#fff',
@@ -36,5 +36,6 @@ export default StyleSheet.create({
   },
   itemText: {
     color: '#fff',
+    fontSize: 16,
   },
 });

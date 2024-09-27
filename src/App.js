@@ -1,8 +1,11 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
 import AppNavigation from './navigation/AppNavigation';
-const App = () => {
-  return <AppNavigation />;
-};
+import {CartProvider} from './context/CartContext';
+
+const App = () => (
+  <CartProvider>
+    <AppNavigation />
+  </CartProvider>
+);
 
 export default App;

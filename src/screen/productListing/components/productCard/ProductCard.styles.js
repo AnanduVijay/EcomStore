@@ -10,8 +10,10 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
   },
   productImage: {
-    width: 111,
-    height: 78,
+    width: 100,
+    height: 100,
+    borderRadius: 18,
+    marginLeft: 10,
   },
   detailsContainer: {
     marginRight: 20,
@@ -66,5 +68,17 @@ export default StyleSheet.create({
   qtyText: {
     color: 'grey',
     fontSize: 16,
+  },
+  addTocartButton: {
+    alignItems: 'center',
+    backgroundColor: '#08C25D',
+    borderRadius: 10,
+    marginTop: 10,
+    padding: 12,
+  },
+  cartText: {
+    color: '#fff',
+    fontSize: 15,
+    fontWeight: 'bold',
   },
 });

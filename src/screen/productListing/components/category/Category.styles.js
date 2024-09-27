@@ -6,12 +6,13 @@ export default StyleSheet.create({
     width: 72,
     height: 62,
     marginTop: 20,
+    marginBottom: 20,
   },
   categoryImage: {
     width: 72,
-    height: 62,
+    height: 72,
     borderWidth: 2,
-    borderRadius: 8,
+    borderRadius: 50,
     borderColor: 'green',
   },
   categoryText: {

@@ -7,17 +7,11 @@ export default StyleSheet.create({
     gap: 5,
   },
   ProductImage: {
-    width: 50,
-    height: 36,
-  },
-  imageContainer: {
-    borderWidth: 1,
+    width: 75,
+    height: 60,
     borderRadius: 10,
-    padding: 15,
-    width: 80,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
+
   productTitle: {
     color: 'black',
     fontWeight: 'bold',

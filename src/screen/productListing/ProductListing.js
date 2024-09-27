@@ -1,22 +1,23 @@
-import {
-  View,
-  SafeAreaView,
-  Button,
-  Text,
-  Image,
-  ScrollView,
-} from 'react-native';
-import React from 'react';
+import {View, SafeAreaView, Image, ScrollView} from 'react-native';
+import React, {useContext} from 'react';
 import styles from './ProductListing.styles';
 import Header from './components/header/Header';
 import Store from './components/store/Store';
 import PromoCode from './components/promocode/PromoCode';
-import Categoy from './components/category/Categoy';
+import Category from './components/category/Category';
 import ProductCard from './components/productCard/ProductCard';
 import CheckOutBar from './components/checkoutBar/CheckOutBar';
+import {categoryList, foodlist} from '../../assets/assets';
+import {CartContext} from '../../context/CartContext';
 
 const ProductListing = ({navigation}) => {
   const mainImage = require('../../assets/images/wall.jpg');
+  const {cartItems} = useContext(CartContext);
+
+  const totalProducts = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0,
+  );
   return (
     <SafeAreaView style={styles.mainContainer}>
       <ScrollView>
@@ -37,19 +38,28 @@ const ProductListing = ({navigation}) => {
             justifyContent: 'space-between',
             marginBottom: 10,
           }}>
-          <Categoy />
-          <Categoy />
-          <Categoy />
-          <Categoy />
+          {categoryList.map(item => (
+            <Category
+              key={item.menu_name}
+              category={item.menu_name}
+              image={item.menu_image}
+            />
+          ))}
         </View>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        {foodlist.map(item => (
+          <ProductCard
+            key={item._id}
+            id={item._id}
+            title={item.name}
+            image={item.image}
+            price={item.price}
+            offerPrice={item.offerPrice}
+          />
+        ))}
       </ScrollView>
-      <CheckOutBar onPress={() => navigation.navigate('Cart')} />
+      {totalProducts !== 0 ? (
+        <CheckOutBar onPress={() => navigation.navigate('Cart')} />
+      ) : null}
     </SafeAreaView>
   );
 };

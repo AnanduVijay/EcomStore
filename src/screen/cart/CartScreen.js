@@ -5,12 +5,14 @@ import CartItems from './components/cartItems/ CartItems';
 import Header from './components/header/Header';
 import ProductList from './components/productList/ProductList';
 import DeliveryType from './components/deliveyType/DeliveryType';
+import DeliveryDay from './components/deliveryDay/DeliveryDay';
+import DeliveryTime from './components/deliveryTime/DeliveryTime';
 
 const CartScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Header onPress={() => navigation.navigate('Home')} />
-      <ScrollView style={styles.wraper}>
+      <ScrollView contentContainerStyle={styles.wraper}>
         <CartItems />
         <CartItems />
         <CartItems />
@@ -25,6 +27,8 @@ const CartScreen = ({navigation}) => {
           <ProductList />
         </ScrollView>
         <DeliveryType />
+        <DeliveryDay />
+        <DeliveryTime />
       </ScrollView>
     </View>
   );

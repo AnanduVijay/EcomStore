@@ -8,11 +8,11 @@ const DeliveryType = () => {
     <View style={styles.container}>
       <View style={styles.instantCard}>
         <BoltIcon size={34} color={'grey'} />
-        <Text>Instant delivery</Text>
+        <Text style={styles.title}>Instant delivery</Text>
       </View>
       <View style={styles.scheduledCard}>
         <ClockIcon size={34} color={'grey'} />
-        <Text>Scheduled delivery</Text>
+        <Text style={styles.title}>Scheduled delivery</Text>
       </View>
     </View>
   );

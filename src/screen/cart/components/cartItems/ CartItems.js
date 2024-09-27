@@ -9,10 +9,17 @@ const CartItems = ({
   quantity,
   onDecrementItem,
   onIncrementItem,
+  selected,
+  onPress,
 }) => {
   const totalPrice = offerPrice * quantity;
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={[
+        styles.container,
+        {borderColor: selected ? '#08C25D' : 'transparent'},
+      ]}>
       <View style={styles.detailsContainer}>
         <Text style={styles.productTitle}>{title}</Text>
         <View style={styles.priceContainer}>
@@ -44,7 +51,7 @@ const CartItems = ({
           {totalPrice}
         </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

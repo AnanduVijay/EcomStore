@@ -3,7 +3,15 @@ import React, {useContext} from 'react';
 import styles from './ProductCard.styles';
 import {CartContext} from '../../../../context/CartContext';
 
-const ProductCard = ({id, title, image, price, offerPrice}) => {
+const ProductCard = ({
+  id,
+  title,
+  image,
+  price,
+  offerPrice,
+  onPress,
+  touched,
+}) => {
   const {cartItems, addToCart, removeFromCart, setCartItems} =
     useContext(CartContext);
   const product = {
@@ -39,7 +47,12 @@ const ProductCard = ({id, title, image, price, offerPrice}) => {
   const currentQuantity =
     cartItems.find(item => item.id === product.id)?.quantity || 0;
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      style={[
+        styles.container,
+        {borderColor: touched ? '#08C25D' : 'transparent'},
+      ]}
+      onPress={onPress}>
       <Image style={styles.productImage} source={image} />
       <View style={styles.detailsContainer}>
         <Text style={styles.productTitle}>{title}</Text>
@@ -74,7 +87,7 @@ const ProductCard = ({id, title, image, price, offerPrice}) => {
           </TouchableOpacity>
         )}
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

@@ -11,9 +11,8 @@ export default StyleSheet.create({
   categoryImage: {
     width: 72,
     height: 72,
-    borderWidth: 2,
+    borderWidth: 3,
     borderRadius: 50,
-    borderColor: 'green',
   },
   categoryText: {
     fontWeight: 'bold',

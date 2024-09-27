@@ -1,5 +1,5 @@
 import {View, Text, ScrollView} from 'react-native';
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import styles from './CartScreen.styles';
 import CartItems from './components/cartItems/ CartItems';
 import Header from './components/header/Header';
@@ -15,7 +15,9 @@ import {foodlist} from '../../assets/assets';
 
 const CartScreen = ({navigation}) => {
   const {cartItems, removeFromCart, setCartItems} = useContext(CartContext);
+  const [touchedProduct, setTouchedProduct] = useState('');
 
+  const handleOnTouch = product => setTouchedProduct(product);
   const incrementItem = product => {
     const updatedCartItems = cartItems.map(item =>
       item.id === product.id ? {...item, quantity: item.quantity + 1} : item,
@@ -43,6 +45,8 @@ const CartScreen = ({navigation}) => {
             price={item.price}
             quantity={item.quantity}
             offerPrice={item.offerPrice}
+            onPress={() => handleOnTouch(item.id)}
+            selected={item.id === touchedProduct}
             onDecrementItem={() => decrementItem(item)}
             onIncrementItem={() => incrementItem(item)}
           />

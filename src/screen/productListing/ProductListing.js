@@ -1,5 +1,5 @@
 import {View, SafeAreaView, Image, ScrollView} from 'react-native';
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import styles from './ProductListing.styles';
 import Header from './components/header/Header';
 import Store from './components/store/Store';
@@ -13,11 +13,27 @@ import {CartContext} from '../../context/CartContext';
 const ProductListing = ({navigation}) => {
   const mainImage = require('../../assets/images/wall.jpg');
   const {cartItems} = useContext(CartContext);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [touchedProduct, setTouchedProduct] = useState('');
+
+  const handleOnTouch = product => setTouchedProduct(product);
 
   const totalProducts = cartItems.reduce(
     (total, item) => total + item.quantity,
     0,
   );
+
+  const handleCategoryPress = category => {
+    if (category === selectedCategory) {
+      setSelectedCategory(null);
+    } else {
+      setSelectedCategory(category);
+    }
+  };
+
+  const filteredFoodlist = selectedCategory
+    ? foodlist.filter(item => item.category === selectedCategory)
+    : foodlist;
   return (
     <SafeAreaView style={styles.mainContainer}>
       <ScrollView>
@@ -43,10 +59,12 @@ const ProductListing = ({navigation}) => {
               key={item.menu_name}
               category={item.menu_name}
               image={item.menu_image}
+              onPress={() => handleCategoryPress(item.menu_name)}
+              selected={item.menu_name === selectedCategory}
             />
           ))}
         </View>
-        {foodlist.map(item => (
+        {filteredFoodlist.map(item => (
           <ProductCard
             key={item._id}
             id={item._id}
@@ -54,6 +72,8 @@ const ProductListing = ({navigation}) => {
             image={item.image}
             price={item.price}
             offerPrice={item.offerPrice}
+            onPress={() => handleOnTouch(item._id)}
+            touched={item._id === touchedProduct}
           />
         ))}
       </ScrollView>
